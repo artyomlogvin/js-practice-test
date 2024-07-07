@@ -1,5 +1,6 @@
 const container = document.querySelector(".pic-div");
 
+// Add one image from API
 function getImage() {
   fetch("https://dog.ceo/api/breeds/image/random", {
     mode: "cors",
@@ -11,11 +12,11 @@ function getImage() {
       console.log(response);
       let newImg = document.createElement("img");
       container.appendChild(newImg);
-      let images = document.querySelectorAll("img");
-      images[images.length - 1].src = response.message;
+      newImg.src = response.message;
     });
 }
 
+// Every 3 secs add images
 function addImages() {
   getImage();
 

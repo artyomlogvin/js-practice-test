@@ -19,5 +19,6 @@ body {
 }
 
 img {
-    max-inline-size: 100%;
+    max-width: 30%;
+    max-height: 30%;
   }
