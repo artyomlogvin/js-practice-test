@@ -17,3 +17,7 @@ body {
     height: 100%;
     background-color: black;
 }
+
+img {
+    max-inline-size: 100%;
+  }
