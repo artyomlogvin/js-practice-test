@@ -11,6 +11,7 @@ function getImage() {
     .then(function (response) {
       console.log(response);
       let newImg = document.createElement("img");
+      appearSmoothly(newImg, 0);
       container.appendChild(newImg);
       newImg.src = response.message;
     });
@@ -18,9 +19,19 @@ function getImage() {
 
 // Every 3 secs add images
 function addImages() {
-  getImage();
+  if (container.scrollHeight <= container.offsetHeight) {
+    getImage();
 
-  setTimeout(addImages, 3000);
+    setTimeout(addImages, 3000);
+  }
 }
 
 addImages();
+
+function appearSmoothly(element, startingOpacity) {
+  element.style.opacity = startingOpacity;
+  if (startingOpacity < 1) {
+    element.style.opacity += 0.1;
+    setTimeout(appearSmoothly(element, startingOpacity + 0.1), 3000);
+  }
+}

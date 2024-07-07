@@ -1,8 +1,10 @@
+/* Simple CSS reset */
 * {
     margin: 0;
     box-sizing: border-box;
 }
 
+/* Make body span whole page */
 body {
     position: fixed;
     top: 0;
@@ -12,12 +14,15 @@ body {
     overflow: auto;
   }
 
+/* Main div for adding pictures to */
 .pic-div {
     width: 35%;
     height: 100%;
     background-color: black;
+    overflow: hidden;
 }
 
+/* Make images appear smaller */
 img {
     max-width: 30%;
     max-height: 30%;
