@@ -11,7 +11,6 @@ function getImage() {
     .then(function (response) {
       console.log(response);
       let newImg = document.createElement("img");
-      appearSmoothly(newImg, 0);
       container.appendChild(newImg);
       newImg.src = response.message;
     });
@@ -27,3 +26,29 @@ function addImages() {
 }
 
 addImages();
+
+// Table code
+const tableBody = document.querySelector("tbody");
+
+const getdata = async () => {
+  const endpoint =
+      "https://dummyjson.com/users?limit=10&select=id,username,email,firstName,lastName,birthDate,height,ip",
+    response = await fetch(endpoint),
+    data = await response.json(),
+    users = data.users;
+
+  users.forEach((userObj) => {
+    let { id, username, email, firstName, lastName, birthDate, height, ip } =
+      userObj;
+    tableBody.innerHTML += `<tr>
+        <td>${id}</td>
+        <td>${username}</td>
+        <td>${email}</td>
+        <td>${firstName + " " + lastName}</td>
+        <td>${birthDate}</td>
+        <td>${height}</td>
+        <td>${ip}</td>
+    </tr>`;
+  });
+};
+getdata();
