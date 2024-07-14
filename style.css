@@ -24,8 +24,9 @@ body {
 
 /* Make images appear smaller */
 img {
-    max-width: 30%;
-    max-height: 30%;
+    max-width: 25%;
+    max-height: 25%;
+    margin: 10px;
   }
 
 /* Table styles */
