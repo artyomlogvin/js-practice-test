@@ -27,11 +27,3 @@ function addImages() {
 }
 
 addImages();
-
-function appearSmoothly(element, startingOpacity) {
-  element.style.opacity = startingOpacity;
-  if (startingOpacity < 1) {
-    element.style.opacity += 0.1;
-    setTimeout(appearSmoothly(element, startingOpacity + 0.1), 3000);
-  }
-}
